@@ -1,7 +1,7 @@
 export interface Producto {
     id: number
     name: string
-    marcaa: string
+    marca: string
     stock: number
     precio: number
 };

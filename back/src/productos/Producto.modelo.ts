@@ -5,19 +5,19 @@ import { Producto } from "./Producto.entity"
 const ProduSchema = new Schema<Producto>({
     name:{
         type:String,
-        require:true
+        
     },
-    marcaa:{
+    marca:{
         type:String,
-        required:true
+        
     },
     precio:{
         type:Number,
-        required:true
+       
     },
     stock:{
         type:Number,
-        required:true
+        
     }
 }, {
         timestamps:true,

@@ -25,6 +25,6 @@ export class productoServiceMongo implements productoServ {
     };
 
     delete(id: string): Promise<Producto | null> {
-        throw new Error('Error al implementar el metodo');
+        return this.modelo.findByIdAndDelete(id);
     };
 };

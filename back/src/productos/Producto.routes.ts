@@ -8,10 +8,7 @@ function routerProduct (productoService:productoServ) {
 
     ProdRout.get("/", async (req, res)=>{
         const listaProduct = await productoService.list()
-        return res.status(200).json({
-            msg:"los productos son ",
-            listaProduct
-        })
+        return res.status(200).json(listaProduct)
     })
 
     ProdRout.post("/", async (req, res)=>{
@@ -40,8 +37,8 @@ function routerProduct (productoService:productoServ) {
         }
     })
 
-    ProdRout.delete('/', async (req, res) => {
-        const id = req.body.id;
+    ProdRout.delete('/:id', async (req, res) => {
+        const id = req.params.id;
         try {
             const productoDelete = await productoService.delete(id);
             return res.status(200).json({
